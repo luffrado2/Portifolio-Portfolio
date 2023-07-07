@@ -1,0 +1,111 @@
+/* Alterando fonte do body, fonte vinda
+do google fonts*/
+body{
+    font-family: "Oxanium", cursive;
+    background-color: black;
+    color: white;
+    /*Color altera cor somente dos textos
+    mesmo o seletor sendo body*/
+}
+
+body::before
+/*cria um pseudoelemento no html
+antes do body*/
+{
+    content: "";
+    background-image: url(../imagens/bg-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    /*serve para adicionar uma propriedade
+    na tag pai para alinhar o filho*/
+}
+
+.selecao-de-personagens{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-height: calc(100vh - 152px);
+    /*vh vieweport height (altura da janela de exibição)
+    - 152 (altura do cabeçalho)*/
+    justify-content: center;
+}
+
+/*estilizando a tag com a class lista que está
+dentro de outro elemento com a class selecao*/
+.selecao-de-personagens .lista-de-personagens{
+    display: flex;
+    flex-wrap: wrap;
+    /*encaixa os elementos no tamanho
+    da div*/
+    gap: 30px;
+    /*espaçamento entre elementos*/
+    justify-content: center;
+}
+
+.selecao-de-personagens .personagens{
+    display: flex;
+    flex-direction: column;
+    /*um em baixo do outro*/
+    align-items: center;
+    max-width:585px ;
+    gap: 25px;
+}
+
+.selecao-de-personagens .personagens .titulo{
+    font-size: 20px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #47f4ff ;
+    /*adiciona borda em baixo do elemento*/
+    width: 100%;
+    /*a % se baseia na largura total do elemento pai*/
+    text-align: center;
+}
+
+.lista-de-personagens .personagem img{
+    width: 100%;
+    height: 100%;
+}
+
+.lista-de-personagens .personagem.selecionado
+/*2 classes em um elemento*/
+{
+    box-shadow: 0px 0px 24px 5px #0271f7;
+
+}
+
+.personagem-selecionado{
+    text-align: center;
+    max-height: 530px;
+}
+
+.personagem-selecionado .personagem-grande{
+    width: 430px;
+    height: 430px;
+}
+
+.personagem-selecionado .nome-personagem{
+    border-bottom: 2px solid #47f4ff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+}
+
+.personagem-selecionado .descricao-personagem{
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 20px;
+    width: 420px;
+}
